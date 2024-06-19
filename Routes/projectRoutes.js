@@ -3,5 +3,5 @@ import { createProject, getProject } from "../Controllers/projectController.js";
 
 export const projectRouter = express.Router();
 
-projectRouter.route("/createProjects").post(createProject);
-projectRouter.route("/getProjects").get(getProject);
+projectRouter.route("/").post(createProject);
+projectRouter.route("/").get(getProject);

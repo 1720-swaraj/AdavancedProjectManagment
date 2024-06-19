@@ -25,8 +25,8 @@ export const createTeam = async (req, res) => {
 export const getTeams = async (req, res) => {
   try {
     const teams = await teamsSchema.find().populate("members");
-    res.status(200).json({ teams });
+    return res.status(200).json({ teams });
   } catch (error) {
-    res.status(500).json({ message: "Failed to get teams", error });
+    return res.status(500).json({ message: "Failed to get teams", error });
   }
 };
