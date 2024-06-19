@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const team = new mongoose.Schema({
-  team_name: {
+  teamName: {
     type: String,
     required: true,
   },
