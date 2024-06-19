@@ -5,6 +5,7 @@ import "dotenv/config";
 import { dbConnection } from "./DataBaseConnection/dbConnection.js";
 import { staticRouter } from "./Routes/staticRoutes.js";
 import { projectRouter } from "./Routes/projectRoutes.js";
+import { taskRouter } from "./Routes/taskRoutes.js";
 const app = express();
 
 //----------------->>database connection
@@ -22,6 +23,7 @@ app.use(cors());
 //------------------>>Routes
 app.use("/api/auth", staticRouter);
 app.use("/api/project", projectRouter);
+app.use("/api/task",taskRouter)
 //------------------->>connection
 app.listen(process.env.PORT, () => {
   console.log(`listning to ${process.env.PORT}`);
