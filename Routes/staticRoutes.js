@@ -1,6 +1,7 @@
 import express from "express";
-import { userRegistration } from "../Controllers/authController.js";
+import { userLogin, userRegistration } from "../Controllers/authController.js";
 
 export const staticRouter = express.Router();
 
 staticRouter.route("/register").post(userRegistration);
+staticRouter.route("/login").post(userLogin);

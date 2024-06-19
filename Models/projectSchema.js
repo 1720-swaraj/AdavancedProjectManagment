@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const project = new mongoose.Schema({
-  project_name: {
+  projectName: {
     type: String,
     required: true,
   },
