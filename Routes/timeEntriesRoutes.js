@@ -7,4 +7,4 @@ import {
 export const timeEntriesRouter = express.Router();
 
 timeEntriesRouter.route("/").post(enterTimeEntries);
-timeEntriesRouter.route("/").post(getTimeEntries);
+timeEntriesRouter.route("/").get(getTimeEntries);

@@ -26,7 +26,7 @@ export const getTask = async (req, res) => {
       .find()
       .populate("project")
       .populate("assignee");
-    return res.status(200).json({ tasks });
+    return res.status(200).json({ tasks: tasks });
   } catch (error) {
     return res.status(500).json({ message: "Failed to get tasks", error });
   }

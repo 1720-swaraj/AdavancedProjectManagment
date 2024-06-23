@@ -23,10 +23,16 @@ export const enterTimeEntries = async (req, res) => {
 //------------------------>>get Time Entries
 
 export const getTimeEntries = async (req, res) => {
-    try {
-        const timeEntries = await timeEntriesSchema.find().populate('task').populate('user');
-        res.status(200).json({ timeEntries });
-    } catch (error) {
-        res.status(500).json({ message: 'Failed to get time entries', error });
-    }
+  try {
+    const timeEntries = await timeEntriesSchema
+      .find()
+      .populate("task")
+      .populate("user");
+    return res.status(200).json({ timeEntries });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "Failed to get time entries", error });
+  }
 };
+//git repo edit 1720-swaraj/AdavancedProjectManagment --default-branch=project

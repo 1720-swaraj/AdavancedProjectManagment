@@ -11,7 +11,7 @@ export const createProject = async (req, res) => {
       return res.status(404).json({ message: "Invalid credentials!!" });
     }
     const newProject = await projectSchema.create({
-        projectName,
+      projectName,
       description,
       manager,
       team,

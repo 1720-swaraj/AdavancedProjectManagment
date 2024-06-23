@@ -18,7 +18,9 @@ export const userRegistration = async (req, res) => {
     const token = jwt.sign({ userId: newUser._id }, process.env.SECRET_KEY, {
       expiresIn: "1h",
     });
-    return res.status(200).json({ message: "web token generated", token });
+    return res
+      .status(200)
+      .json({ message: "web token generated", token, users: newUser });
   } catch (error) {
     return res.status(404).json({ message: error });
   }
