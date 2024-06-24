@@ -9,6 +9,7 @@ import { taskRouter } from "./Routes/taskRoutes.js";
 import { teamRouter } from "./Routes/teamRoutes.js";
 import { timeEntriesRouter } from "./Routes/timeEntriesRoutes.js";
 import { usersRouter } from "./Routes/userRoutes.js";
+import cookieParser from "cookie-parser";
 const app = express();
 
 //----------------->>database connection
@@ -21,8 +22,10 @@ dbConnection()
   });
 
 //------------------>>middleware
+app.use(cookieParser());
 app.use(express.json());
 app.use(cors());
+
 //------------------>>Routes
 app.use("/api/auth", staticRouter);
 app.use("/api/users", usersRouter);
